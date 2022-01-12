@@ -1,1 +1,2 @@
 1. Today is 01/10/2022. I'm studing how to use Github.
+2. 01、11/2022,start to study Linked list;
