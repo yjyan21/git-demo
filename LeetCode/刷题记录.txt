@@ -2,3 +2,4 @@
 2. 01/11/2022,start to study Linked list;
 3. https://www.bookstack.cn/read/wind-liang-eetcode/8922816f54b1112b.md [这个链接里面有前300题的解题思路]
 4. 141. Linked List Cycle[这道题并没有太明白[1,2] pos:-1到底算什么意思？-------]
+5. 160. Intersection of Two Linked Lists 【解析来自https://www.youtube.com/watch?v=NufEjdUBpgg】
