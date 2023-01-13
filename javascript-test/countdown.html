@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown1</title>
+    <style type="text/css">
+        body { padding:0;margin:0;}
+        .container { width:200px;height:200px;background-color:lightgray;padding:15px;
+          margin:0 auto;font-size:20px;text-align:center;}
+        .btns { margin-top:40px;}
+    </style>
+</head>
+<body>
+   <h1>Today is 01/06/2023.</h1> 
+   <div class="container">
+     <div class="content">
+        Are you sure to make the payment?
+     </div>
+     <div class="btns">
+        <button>Cancel</button>
+        <button>Yes</button>
+     </div>
+   </div>
+   <script>
+     let btn = document.getElementsByTagName('button')[1];
+     btn.onclick = function(){
+        let ans = window.confirm('Are you sure?');
+        if(ans){
+            location.href = './countdown2.html';
+        }
+     }
+   </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown2</title>
+</head>
+<body>
+    <h3>Congratulations, You have made the payment successfully!</h3>
+    <h4>Go to Home page after <span style="color:red;">10</span> seconds.</h4>
+    <button>Go to home page.</button>
+    <script>
+        let timer = document.getElementsByTagName('span')[0];
+        let timerfun = setInterval(function(){
+            timer.innerText -= 1;
+            if(timer.innerText == 0){
+                location.href = './countdown.html';
+            }
+        },1000)
+
+        let btn = document.getElementsByTagName('button')[0];
+        btn.onclick = function(){
+            location.href = './countdown.html';
+        }
+
+    </script>
+</body>
+</html>

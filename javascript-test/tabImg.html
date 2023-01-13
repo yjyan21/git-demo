@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab-change-image</title>
+    <style type="text/css">
+			.container { width:250px;height:220px;border:1px solid lightgray;}
+			ul li { list-style: none;float:left;background-color:lightblue;}
+			ul.tags { width:250px;height:30px;line-height:30px;padding:0;margin:0;}
+			ul.tags li { width:61px;text-align:center;border-right:1px dashed black;}
+			.img { width:248px;height:180px;overflow: hidden;position:relative;}
+			.img img { position:absolute;left:50%;top:50%;margin-top:-90px;margin-left:-124px;}
+			
+    </style>
+</head>
+<body>
+    <div class="container">
+			<ul class="tags">
+        <li>No.1</li>
+        <li>No.2</li>
+        <li>No.3</li>
+        <li>No.4</li>
+      </ul>
+			<div class="img">
+				<ul>
+					<li class="imgPic"><img src="./imgs/1.jpg" alt='picture01'/></li>
+					<li class="imgPic"><img src="./imgs/2.jpg" alt='picture02'/></li>
+					<li class="imgPic"><img src="./imgs/3.jpg" alt='picture03'/></li>
+					<li class="imgPic"><img src="./imgs/4.jpg" alt='picture04'/></li>
+				</ul>
+			</div>
+    </div>
+    <script>
+			let imgLi = document.getElementsByTagName('li');
+			let imgs = document.getElementsByClassName('img');
+			let imgPic = document.getElementsByClassName('imgPic');
+			
+			for(let i = 0; i < 4; i++){
+				imgLi[i].onmouseover = function(){
+
+					this.style.backgroundColor = 'yellow';
+					for(let j = 0; j < 4; j++){
+						imgPic[j].style.display = 'none';
+					}
+					imgPic[i].style.display = 'block';
+					
+				}
+				imgLi[i].onmouseleave = function(){
+					this.style.backgroundColor = 'lightblue';
+				}
+
+				console.log(i);
+			}
+		</script>
+</body>
+</html>

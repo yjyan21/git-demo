@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search_Result</title>
+	  <style type="text/css">
+			.container { width:200px;height:220px;border:1px solid gray;padding:8px;}
+			.inputText { width:140px;}
+			.btn { width:50px;padding:0;}
+			.showResult { width:146px;border:1px solid lightgray;color:lightgray;display:none;}
+		</style>
+</head>
+<body>
+  <div class="container">
+		<input class="inputText" type="text" value=""><button class="btn">Search</button>
+		<div class="showResult"></div>
+	</div>  
+	<script>
+		let arr = ['FrontEnd Developer','FullStack Developer','React Developer','SQL Manager',
+		'Senior Java Developer','FrontEnd Designer','SEO Manager']; //Total number is:7.
+		let inputText = document.getElementsByClassName('inputText')[0];
+		let showResult = document.getElementsByClassName('showResult')[0];
+
+		inputText.onkeyup = function(){
+			let newInput = inputText.value;
+			newInput = newInput.toLowerCase();
+			showResult.style.display = 'block';
+			let str = '';
+			arr.forEach(item => {
+				itemLowerCase = item.toLowerCase();
+				if(itemLowerCase.indexOf(newInput) != -1){
+					str += '<p>'+item+'</p>';
+				}
+			})
+			if(!newInput || !str){
+				showResult.innerHTML = "No Result!";
+				
+			}else{
+				showResult.innerHTML = str;
+			}
+		}
+
+		inputText.onblur = function(){
+			showResult.style.display = 'none';
+		}
+		
+	</script>
+</body>
+</html>

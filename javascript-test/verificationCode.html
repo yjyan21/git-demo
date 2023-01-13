@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VerificationCode</title>
+    <style type="text/css">
+        .container { width:200px;height:220px;padding:10px;border:1px solid gray;}
+        .code_input { width:80px;}
+        div { height:45px;}
+        .code { font-size:30px;color:blue;font-family: Haettenschweiler, 
+					'Arial Narrow Bold', sans-serif;}
+				#code_input { width:100px;}
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div><span class="code">111</span><a id="onChange" href="#">change it</a></div>
+        <div>Your text: <input class="code_input" type='text' name="code" value="123"></div>
+        <button>check</button>
+    </div>
+    <script>
+        let getCode = function(){
+            let arr = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];//totalNum is 16
+            let str = "";
+            for(let i = 0; i < 7; i++){
+                str += arr[Math.round(Math.random()*15)];
+            }
+            return str;
+        }
+        let codeArea = getCode();
+        document.getElementsByClassName('code')[0].innerHTML = codeArea;
+
+        document.getElementById('onChange').onclick = function(){
+            document.getElementsByClassName('code')[0].innerHTML = getCode();
+        } 
+       
+
+        document.getElementsByTagName('button')[0].onclick = function(){
+					let codeNew = document.getElementsByClassName('code')[0].innerHTML; 
+          let yourText = document.getElementsByClassName('code_input')[0].value;
+					//上面这两行注意应该放到这个function里面，否则获取的还是旧的值
+
+            if(yourText != codeNew){
+              alert('The verification code is not correct.');
+            }else(
+							alert('congratulation!')
+						)
+        }
+        
+        
+    </script>
+</body>
+</html>
