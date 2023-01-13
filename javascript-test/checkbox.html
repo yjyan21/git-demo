@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox</title>
+    <style type="text/css">
+        .container { width:200px;height:250px;border:1px solid lightgray;}
+				.choice { border-top:1px dashed lightgray;padding-top:5px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="options">
+				<input type="checkbox" />Rose <br/>
+        <input type="checkbox" />Waterlily<br/>
+        <input type="checkbox" />Orchid<br/>
+        <input type="checkbox" />Carnation<br/>
+        <input type="checkbox" />Hyacinth
+			</div>  
+      <div class="choice">
+				<button onclick="checkChioce(0)">select all</button> <br/>
+				<button onclick="checkChioce(1)">select none</button> <br/>
+				<button onclick="checkChioce(2)">select the other</button>
+			</div>
+    </div>
+		<script>
+			let inputs = document.getElementsByTagName('input');
+			let choices = document.getElementsByTagName('button');
+
+			
+
+			function checkChioce(n){
+				
+				for(let i = 0; i < inputs.length; i++){
+					if(n==0){ inputs[i].checked = true;}
+					else if(n==1) { inputs[i].checked = false; }
+					else { inputs[i].checked = !inputs[i].checked; }
+					
+				}
+			}
+		</script>
+</body>
+</html>
